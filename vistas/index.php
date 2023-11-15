@@ -1,6 +1,5 @@
 <?php
-
-echo "HOla mundo";
+session_start();
 
 require_once "../librerias/Conexion.php";
 require_once "../modelos/Azafata.php";
@@ -16,4 +15,9 @@ $resultado = $conexion->query($sql, $parametros);
 $datos = $resultado->fetchObject("Azafata");
 
 echo "<br><br>";
-echo "Nombre: " . $datos->nombre;
+echo "Nombre: " . $datos->nombre . "<br>";
+$azafataPerfil = unserialize($_SESSION["azafata"]);
+echo var_dump($azafataPerfil);
+echo "<br>";
+
+echo $azafataPerfil->idAzafata;

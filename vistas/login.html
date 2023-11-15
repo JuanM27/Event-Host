@@ -10,12 +10,14 @@
     <div id="container-login">
       <div id="login">
         <div id="contenido-login">
-          <label for="nombre">Nombre</label><br />
-          <input type="text" name="nombre" id="nombre" />
-          <br />
-          <label for="contrasena">Contraseña</label><br />
-          <input type="password" name="contrasena" id="contrasena" /><br />
-          <button id="entrar">Entrar</button><br />
+          <form action="comprobarLogin.php" method="post">
+            <label for="email">Email</label><br />
+            <input type="text" name="email" id="email" />
+            <br />
+            <label for="contrasena">Contraseña</label><br />
+            <input type="password" name="contrasena" id="contrasena" /><br />
+            <button id="entrar">Entrar</button><br />
+          </form>
           <p>¿No tienes cuenta? Registrate</p>
         </div>
       </div>
