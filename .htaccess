@@ -1,0 +1,7 @@
+RewriteEngine On
+
+#RewriteRule ^url_amigable$ url_real [opcionalmente_flags]
+
+RewriteRule ^HomePage$ controladores/controladorFrontal.php?f=mostrarNombre&m=Azafata [L]
+
+RewriteRule ^HomePage/Solicitar/([1-9][0-9]*)$ controladores/controladorFrontal.php?f=solicitarTrabajo&m=Azafata&idEvento=$1 [L]

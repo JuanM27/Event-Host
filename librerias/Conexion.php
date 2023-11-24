@@ -57,7 +57,7 @@ class Conexion
    * Realiza una consulta sobre la base de datos y guarda
    * el conjunto de resultados en una propiedad de la clase
    */
-  public function query(string $sql, array $bindValue = [])
+  public function query(string $sql, ?array $bindValue = [])
   {
     $sqlp = $this->pdo->prepare($sql);
 

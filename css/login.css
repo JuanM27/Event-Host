@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Playfair"; /* Puedes darle el nombre que prefieras */
+  src: url("../../fuentes/static/PlayfairDisplay-Regular.ttf")
+    format("truetype"); /* Ajusta la ruta según la ubicación de tu archivo de fuente */
+  /* Puedes agregar formatos adicionales para mayor compatibilidad, como woff o woff2 */
+}
+
+body {
+  display: flex;
+  margin: 0;
+  height: 100vh;
+  font-family: "Playfair", sans-serif;
+  font-weight: bold;
+}
+
+/*Estilos para el toglle de empresa*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  margin: 3%;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 4px;
+  top: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #bb21f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #bb21f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#container-login {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login {
+  background-color: rgb(197, 175, 250);
+  width: 60%;
+  height: 60%;
+  border-radius: 30px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.261);
+}
+
+#logo {
+  background-color: rgba(78, 38, 163, 0.819);
+  border-radius: 40px 0px 0px 40px;
+  height: 100vh;
+  width: 50%;
+}
+
+#logo-fondo {
+  background-color: white;
+  height: 60%;
+  width: 70%;
+  margin-left: 18%;
+  margin-top: 22%;
+  overflow: hidden;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.261);
+}
+#logo-fondo img {
+  height: 57vh;
+  width: 57vh;
+  border-radius: 300px;
+}
+#contenido-login {
+  margin-left: 15%;
+  margin-top: 9%;
+  margin-right: 13%;
+}
+
+.input-escribir {
+  width: 95%; /* El ancho es el 50% del contenedor padre */
+  height: 3em; /* Altura en relación con la fuente */
+  margin-bottom: 15%;
+  margin-top: 3%;
+  border-radius: 20px;
+  border: none;
+}
+
+.label-inputEscritura {
+  color: rgb(78, 38, 163);
+}
+
+button {
+  color: white;
+  background-color: rgba(78, 38, 163, 0.819);
+  height: 3em;
+  border-radius: 20px;
+  width: 20%;
+  border: none;
+  font-family: "Playfair", sans-serif;
+  font-weight: bold;
+}
+
+p {
+  margin-top: 12%;
+  color: rgb(78, 38, 163);
+}

@@ -4,18 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Host</title>
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="../css/login.css" />
   </head>
   <body>
     <div id="container-login">
       <div id="login">
         <div id="contenido-login">
           <form action="comprobarLogin.php" method="post">
-            <label for="email">Email</label><br />
-            <input type="text" name="email" id="email" />
+            <!-- Simplificado el uso del label -->
+            <label class="label-inputEscritura">¿Eres una empresa?</label>
+            <label class="switch">
+              <input id="check" name="check" type="checkbox" />
+              <span class="slider round"></span> </label
+            ><br />
+            <label for="email" class="label-inputEscritura">Email</label><br />
+            <input type="text" name="email" id="email" class="input-escribir" />
             <br />
-            <label for="contrasena">Contraseña</label><br />
-            <input type="password" name="contrasena" id="contrasena" /><br />
+            <label for="contrasena" class="label-inputEscritura"
+              >Contraseña</label
+            ><br />
+            <input
+              type="password"
+              name="contrasena"
+              id="contrasena"
+              class="input-escribir"
+            /><br />
             <button id="entrar">Entrar</button><br />
           </form>
           <p>¿No tienes cuenta? Registrate</p>
@@ -23,9 +36,7 @@
       </div>
     </div>
     <div id="logo">
-      <divl id="logo-imagen">
-        <img src="" alt="" />
-      </divl>
+      <div id="logo-fondo"><img src="../imagenes/logo.jpeg" alt="" /></div>
     </div>
   </body>
 </html>

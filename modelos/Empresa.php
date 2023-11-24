@@ -2,7 +2,7 @@
 
 class Empresa
 {
-  public int $idEmpresa;
+  public int $IdEmpresa;
   public string $nombre;
   public string $paginaWeb;
   public string $eventosPasados;
@@ -26,7 +26,7 @@ class Empresa
    */
   public function getIdEmpresa(): int
   {
-    return $this->idEmpresa;
+    return $this->IdEmpresa;
   }
 
   /**

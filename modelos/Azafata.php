@@ -1,17 +1,16 @@
 <?php
-
 class Azafata
 {
   public int $idAzafata;
   public string $nombre;
   public string $apellidos;
-  public string $contrasena;
   public string $email;
   public string $telefono;
   public string $fotos;
   public string $experiencia;
   public string $estudios;
   public string $idiomas;
+  public string $contrasena;
   public string $zonaTrabajo;
 
   /**
@@ -136,10 +135,17 @@ class Azafata
   /**
    * @return string
    */
-  public function getExperencia(): string
+  public function getExperiencia(?int $numero = null): string
   {
-    return $this->experiencia;
+    if ($numero === null) {
+      return $this->experiencia;
+    } else {
+      $experiencia = explode(",", $this->experiencia);
+      return isset($experiencia[$numero]) ? $experiencia[$numero] : 'Índice no válido';
+    }
   }
+
+
 
   /**
    * @param string $exp
@@ -182,6 +188,14 @@ class Azafata
   public function setZonaTrabajo(string $zona)
   {
     $this->zonaTrabajo = $zona;
+  }
+
+  public function solicitarTrabajo($idE)
+  {
+    $conexion = Conexion::getConnection();
+    $sql = "INSERT INTO aplica (idAzafata,idEvento) VALUES(:idAz,:idEv);";
+    $parametros = array('idAz' => $this->getIAzafata(), 'idEv' => $idE);
+    $conexion->query($sql, $parametros);
   }
 
 }

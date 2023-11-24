@@ -3,36 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/homePage.css" />
+  <title>Event Host</title>
+  <link rel="stylesheet" href="{{urlLinks}}css/homePage.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+
 </head>
   <body>
     <div id="navegacion">
       <nav>
         <ul>
-          <li><a href="#inicio">Logo</a></li>
+          <li><a href="http://localhost/eventHost/HomePage"><div id="miniLogo"><img src="{{urlLinks}}imagenes/logo.png"></div></a></li>
           <li><input type="text" id="buscar" placeholder="Buscar"></li>
-          <li><a href="#acerca">Icono Home</a></li>
-          <li><a href="#servicios">Icono Empleos</a></li>
-          <li><a href="#contacto">Icono notificaciones</a></li>
-          <li><a href="#contacto">Icono perfil</a></li>
+          <li><a href="http://localhost/eventHost/HomePage"><i class="fas fa-home" style="color: #270b64;"></i></a></li>
+          <li><a href="#servicios"><i class="fas fa-suitcase" style="color: #270b64;"></i></a></li>
+          <li><a href="#contacto"><i class="fas fa-bell" style="color: #270b64;"></i></a></li>
+          <li style="margin-left: auto"><a href="#contacto"><div id="miniImagenPerfil"><img src="{{urlLinks}}imagenes/azafata1.1.jpg"></div></a></li>
         </ul>
       </nav>
     </div>
     <div id="cuerpo">
       <div id="miniPerfil">
-        <div id="fotoPerfil"><img src="../imagenes/azafata1.1.jpg"></div>
-        <div id="nombre">{{nombre}} <br> Azafata de Eventos</div>
-        <div id="experiencia1"></div>
-        <div id="experiencia2"></div>
-        <div id="experiencia3"></div>
+        <div id="fotoPerfil"><img src="{{urlLinks}}imagenes/azafata1.1.jpg"></div>
+        <div id="nombre"><strong>{{ nombre }}</strong> <br> Azafata de Eventos</div>
+        <div id="experiencia1" class="experiencia">{{experiencia1}}</div>
+        <div id="experiencia2" class="experiencia">{{experiencia2}}</div>
+        <div id="experiencia3" class="experiencia">{{experiencia3}}</div>
       </div>
-      <div id="miniCalendario"></div>
+      <div id="miniCalendario"><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%232d1365&ctz=Europe%2FMadrid&showTitle=1&title=Calendario&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&src=cGVwZWx1aXMyMjQ0QGdtYWlsLmNvbQ&src=MTNhM2Q3ZDljZDA1Yjk0NTZhOGRlM2EwYzZmNjE1NGUyZTczY2ViOTE4MWMyYTIzMTY2NzU5YzM1NmMzNGE4OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZXMuc3BhaW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%237986CB&color=%23AD1457&color=%2333B679&color=%230B8043" style="border:solid 1px #777" width="90%" height="90%" frameborder="0" scrolling="no"></iframe></div>
       <div id="ofertasTrabajo">
-        <div id="oferta1"></div>
-        <div id="oferta2"></div>
-        <div id="oferta3"></div>
+        {% for evento in eventos %}
+          <form action="http://localhost/eventHost/HomePage/Solicitar/{{evento.getIdEvento}}">
+            <div id="oferta{{ loop.index }}" class="oferta">
+                <div id="imagenEmpresa-oferta"><img src="{{urlLinks}}imagenes/logoAnkara.jpg"></div>
+                <div id="div-CuerpoOferta"> 
+                  <p id="oferta{{ loop.index }}-nombreEmpresa" class="textoNegrita">{{ evento.getNombreEmpresa(evento.IdEmpresa) }} | {{ evento.getNombre()}}</p><br/>
+                  <p id="oferta{{ loop.index }}-descripcion" class="cuerpoOferta">{{ evento.getDescripcion()}}</p></br>
+                  <p id="oferta{{ loop.index }}-localizacion" class="cuerpoOferta"><strong>-Localización:</strong> {{ evento.getLocalizacion}}</p>
+                  <p id="oferta{{ loop.index }}-idiomas" class="cuerpoOferta"><strong>-Idiomas:</strong> {{ evento.getIdiomas() }}</p>
+                  <p id="oferta{{ loop.index }}-vestimenta" class="cuerpoOferta"><strong>-Vestimenta:</strong> {{ evento.getVestimenta() }}</p></br>
+                  <button id="botonSolicitar">Solicitar Trabajo</button>
+                </div>
+            </div>
+          </form>
+        {% endfor %}
       </div>
     </div>
   </body>
 </html>
+
