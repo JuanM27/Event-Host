@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+}
+
+@font-face {
+  font-family: "PlayFair";
+  src: url("../fuentes/Playfair/static/Lora-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../fuentes/Lora/Lora-VariableFont_wght.ttf") format("truetype");
+}
+
+#navegacion {
+  background-color: rgb(197, 175, 250);
+  height: 6vh;
+  margin-bottom: 2%;
+}
+
+#navegacion ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navegacion li {
+  margin-right: 10%; /* Ajusta el espaciado entre los enlaces según sea necesario */
+  margin-top: 0.5%;
+  margin-left: 3%;
+}
+
+#navegacion input {
+  margin-left: -75%;
+  border-radius: 30px;
+  margin-right: 30%;
+  width: 120%;
+  border: none;
+  font-family: Lora;
+}
+
+#navegacion i {
+  font-size: 140%;
+}
+
+#navegacion a {
+  text-decoration: none; /* Quita la decoración de los enlaces */
+  color: #000; /* Cambia el color del texto según tus preferencias */
+}
+
+#miniLogo {
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  margin-top: -4px;
+}
+
+#miniLogo img {
+  height: 100%;
+  width: 100%;
+}
+
+#miniImagenPerfil {
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  margin-top: -4px;
+  right: 0;
+}
+
+#miniImagenPerfil img {
+  height: 100%;
+  width: 100%;
+  border-radius: 30px;
+}
+
+#cuerpo {
+  display: flex;
+}
+
+#tarjetaEvento {
+  background-color: rgba(78, 38, 163, 0.819);
+  height: 40vh;
+  width: 60vh;
+  margin-left: 4%;
+  border-radius: 50px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.261);
+  color: white;
+}
+
+#cuerpoTarjetaEvento {
+  margin-top: 3%;
+  margin-left: 15%;
+  margin-right: 10%;
+}
+
+#nombreEvento {
+  font-family: Playfair;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.textoTarjeta {
+  font-family: Lora;
+  font-size: 15px;
+}
+
+#solicitudes {
+  display: flex;
+  flex-direction: column;
+  min-height: 75vh;
+  align-items: flex-start;
+}
+
+.solicitud {
+  background-color: rgba(224, 212, 250, 0.819);
+  height: 30vh;
+  width: 110vh;
+  border-radius: 50px;
+  margin-left: 10vh;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.261);
+  display: flex;
+  margin-bottom: 4%;
+}
+
+#imagenAzafata {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50px;
+  background-color: white;
+  margin-left: 3%;
+  margin-top: 2%;
+}
+
+#imagenAzafata img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+
+#cuerpoSolicitud {
+  margin-left: 3%;
+  margin-right: 2%;
+  margin-top: 2%;
+}
+
+.nombreAzafata {
+  font-family: Playfair;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.solicitud button {
+  font-family: Playfair;
+  font-weight: bold;
+  background-color: rgb(197, 175, 250);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  width: auto;
+  height: 2rem;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.261);
+  margin-bottom: 2vh;
+  margin-top: 1vh;
+}
+
+.solicitud button:hover {
+  background-color: rgba(39, 11, 100, 0.819);
+}
+
+#cuerpoTarjetaEvento button {
+  font-family: Playfair;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 30px;
+  width: auto;
+  height: 2rem;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.261);
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+}
+
+#cuerpoTarjetaEvento button:hover {
+  background-color: white;
+  background-color: rgb(197, 175, 250);
+  color: white;
+}

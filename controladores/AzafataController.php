@@ -8,7 +8,7 @@ class AzafataController extends Controller
 {
   public function mostrarNombre(?string $url = null)
   {
-    $eventos = Evento::getAllEventos($_SESSION["azafata"]->getIAzafata());
+    $eventos = Evento::getAllEventos($_SESSION["azafata"]->getIdAzafata());
     $urlLinks = $url . "./";
     $this->render("homePage.php.twig", [
       "nombre" => $_SESSION["azafata"]->getNombre(),
@@ -24,7 +24,7 @@ class AzafataController extends Controller
   public function solicitarTrabajo()
   {
     $_SESSION["azafata"]->solicitarTrabajo($_GET['idEvento']);
-    $this->mostrarNombre("../.");
+    header("Location: http://localhost/eventHost/HomePage");
   }
 
 }

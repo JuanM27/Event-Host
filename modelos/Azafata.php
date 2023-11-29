@@ -12,6 +12,8 @@ class Azafata
   public string $idiomas;
   public string $contrasena;
   public string $zonaTrabajo;
+  public string $descripcion;
+  public string $disponibilidad;
 
   /**
    *
@@ -24,7 +26,7 @@ class Azafata
   /**
    * @return int
    */
-  public function getIAzafata(): int
+  public function getIdAzafata(): int
   {
     return $this->idAzafata;
   }
@@ -176,6 +178,23 @@ class Azafata
   /**
    * @return string
    */
+  public function getIdiomas(): string
+  {
+    return $this->idiomas;
+  }
+
+  /**
+   * @param $idi
+   * @return 
+   */
+  public function setIdiomas(string $idi)
+  {
+    $this->estudios = $idi;
+  }
+
+  /**
+   * @return string
+   */
   public function getZonaTrabajo(): string
   {
     return $this->zonaTrabajo;
@@ -190,12 +209,60 @@ class Azafata
     $this->zonaTrabajo = $zona;
   }
 
+  /**
+   * @return string
+   */
+  public function getDescripcion(): string
+  {
+    return $this->descripcion;
+  }
+
+  /**
+   * @param string $des
+   * @return
+   */
+  public function setDescripcion(string $des)
+  {
+    $this->descripcion = $des;
+  }
+
+  /**
+   * @return string
+   */
+  public function getDisponibilidad(): string
+  {
+    return $this->disponibilidad;
+  }
+
+  /**
+   * @param string $dis
+   * @return
+   */
+  public function setDisponibilidad(string $dis)
+  {
+    $this->disponibilidad = $dis;
+  }
+
   public function solicitarTrabajo($idE)
   {
     $conexion = Conexion::getConnection();
-    $sql = "INSERT INTO aplica (idAzafata,idEvento) VALUES(:idAz,:idEv);";
-    $parametros = array('idAz' => $this->getIAzafata(), 'idEv' => $idE);
+    $sql = "INSERT INTO aplica (idAzafata,idEvento,contratada) VALUES(:idAz,:idEv,:cont);";
+    $parametros = array('idAz' => $this->getIdAzafata(), 'idEv' => $idE, 'cont' => 0);
     $conexion->query($sql, $parametros);
   }
 
+  public static function getAllAzafatas()
+  {
+    $conexion = Conexion::getConnection();
+    $sql = "SELECT * FROM azafata";
+    $resultado = $conexion->query($sql);
+
+    if ($resultado->rowCount() > 0) {
+      // Iterar sobre las filas del resultado y almacenar cada evento como un objeto en el array $eventos
+      while ($objetoAzafata = $resultado->fetchObject("Azafata")) {
+        $azaftas[] = $objetoAzafata;
+      }
+    }
+    return $azaftas;
+  }
 }

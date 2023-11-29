@@ -1,6 +1,7 @@
 <?php
 require_once "../modelos/Azafata.php";
 require_once "../modelos/Empresa.php";
+require_once "../modelos/Evento.php";
 
 session_start();
 

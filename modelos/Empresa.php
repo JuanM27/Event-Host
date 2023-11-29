@@ -66,9 +66,14 @@ class Empresa
   /**
    * @return string
    */
-  public function getEventosPasados(): string
+  public function getEventosPasados(?int $numero = null): string
   {
-    return $this->eventosPasados;
+    if ($numero === null) {
+      return $this->eventosPasados;
+    } else {
+      $eventosPas = explode(",", $this->eventosPasados);
+      return isset($eventosPas[$numero]) ? $eventosPas[$numero] : 'Índice no válido';
+    }
   }
 
   /**

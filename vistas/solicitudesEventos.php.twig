@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Host</title>
+  <link rel="stylesheet" href="{{urlLinks}}css/solicitudEvento.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+</head>
+  <body>
+    <div id="navegacion">
+      <nav>
+        <ul>
+          <li><a href="http://localhost/eventHost/HomePageEmpresa"><div id="miniLogo"><img src="{{urlLinks}}imagenes/logo.png"></div></a></li>
+          <li><input type="text" id="buscar" placeholder="Buscar"></li>
+          <li><a href="http://localhost/eventHost/HomePageEmpresa"><i class="fas fa-home" style="color: #270b64;"></i></a></li>
+          <li><a href="#servicios"><i class="fas fa-id-card" style="color: #270b64;"></i></a></li>
+          <li><a href="#contacto"><i class="fas fa-bell" style="color: #270b64;"></i></a></li>
+          <li><a href="http://localhost/eventHost/CrearEvento"><i class="fas fa-landmark" style="color: #270b64;"></i></i></a></li>
+          <li style="margin-left: auto"><a href="#contacto"><div id="miniImagenPerfil"><img src="{{urlLinks}}imagenes/logoAnkara.jpg"></div></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="cuerpo">
+      <div id="tarjetaEvento">
+        <div id="cuerpoTarjetaEvento">
+          <h1 id="nombreEvento">{{nombre}}<h1></br>
+          <p class="textoTarjeta">{{descripcion}}</p></br>
+          <p class="textoTarjeta"><strong>-Organización:</strong> {{organizacion}}</p>
+          <p class="textoTarjeta"><strong>-Localización:</strong> {{localizacion}}</p>
+          <p class="textoTarjeta"><strong>-Fecha:</strong> {{fecha}}</p>
+          <p class="textoTarjeta"><strong>-Vestimenta:</strong> {{vestimenta}}</p>
+          <p class="textoTarjeta"><strong>-Número de azafatas por contratar:</strong> {{numeroAzafatas}}</p>
+           <a href="/eventHost/Evento/Finalizar/{{eventoId}}"><button>Finalizar evento</button></a>
+        </div>
+      </div>
+      <div id="solicitudes">
+        {% for azafata in azafatas %}
+          <div class="solicitud">
+          <div id="imagenAzafata"><img src="{{urlLinks}}imagenes/logoAnkara.jpg"></div>
+            <div id="cuerpoSolicitud">
+              <p class="nombreAzafata">{{ azafata.getNombre() }} {{azafata.getApellidos()}}</p><br/>
+              <p class="textoSolicitud">{{ azafata.getDescripcion()}}</p></br>
+              <p class="textoSolicitud"><strong>-Idiomas que habla:</strong> {{ azafata.getIdiomas() }}</p>
+              <p class="textoSolicitud"><strong>-Disponibilidad:</strong> {{ azafata.getDisponibilidad() }}</p>
+              <p class="textoSolicitud"><strong>-Número de teléfono:</strong> {{ azafata.getTelefono() }}</p>
+              <p class="textoSolicitud"><strong>-Email:</strong> {{ azafata.getEmail() }}</p>
+              <a href="/eventHost/Evento/Contratar/{{azafata.getIdAzafata()}}/{{eventoId}}"><button>Contratar</button></a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
+

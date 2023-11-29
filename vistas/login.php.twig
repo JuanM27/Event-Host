@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Host</title>
-    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
     <div id="container-login">
       <div id="login">
         <div id="contenido-login">
-          <form action="comprobarLogin.php" method="post">
+          <form action="controladores/controladorFrontal.php?f=comprobarLogin&m=Login" method="post">
             <!-- Simplificado el uso del label -->
             <label class="label-inputEscritura">¿Eres una empresa?</label>
             <label class="switch">
@@ -31,12 +31,12 @@
             /><br />
             <button id="entrar">Entrar</button><br />
           </form>
-          <p>¿No tienes cuenta? Registrate</p>
+          <p>¿No tienes cuenta? <a href="http://localhost/eventHost/Register">Registrate</a></p>
         </div>
       </div>
     </div>
     <div id="logo">
-      <div id="logo-fondo"><img src="../imagenes/logo.jpeg" alt="" /></div>
+      <div id="logo-fondo"><img src="imagenes/logo.jpeg" alt="" /></div>
     </div>
   </body>
 </html>

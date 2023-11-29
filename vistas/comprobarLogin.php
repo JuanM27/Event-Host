@@ -39,7 +39,7 @@ if (!empty($_POST)) {
       $_SESSION["empresa"] = $empresa;
       $_SESSION["inicio"] = time();
 
-      redireccion("../controladores/controladorFrontal.php?f=mostrarNombre&m=Empresa");
+      redireccion("http://localhost/eventHost/HomePageEmpresa");
     } else {
       echo "Nombre de usuario o contraseña incorrecto.";
     }

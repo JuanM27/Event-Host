@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Host</title>
+    <link rel="stylesheet" href="css/register.css" />
+  </head>
+  <body>
+    <div id="container-login">
+      <div id="login">
+        <div id="contenido-login">
+          <form action="controladores/controladorFrontal.php?f=registrar&m=Login" method="post">
+            <!-- Simplificado el uso del label -->
+            <label class="label-inputEscritura">¿Eres una empresa?</label>
+            <label class="switch">
+              <input id="check" name="check" type="checkbox" />
+              <span class="slider round"></span>
+            </label><br />
+            
+            <label for="nombre" class="label-inputEscritura">Nombre</label><br />
+            <input type="text" name="nombre" id="nombre" class="input-escribir" /><br />
+
+            <label for="apellidos" class="label-inputEscritura">Apellidos(Solo para azafatas/os)</label><br />
+            <input type="text" name="apellidos" id="apellidos" class="input-escribir" /><br />
+
+            <label for="email" class="label-inputEscritura">Email</label><br />
+            <input type="text" name="email" id="email" class="input-escribir" /><br />
+            
+            <label for="contrasena" class="label-inputEscritura">Contraseña</label><br />
+            <input type="password" name="contrasena" id="contrasena" class="input-escribir" /><br />
+            
+            <button id="entrar">Registrar</button><br />
+          </form>
+          
+          <p>¿Ya tienes cuenta? <a href="/eventHost/index.php">Entra</a></p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="logo">
+      <div id="logo-fondo"><img src="imagenes/logo.jpeg" alt="" /></div>
+    </div>
+  </body>
+</html>

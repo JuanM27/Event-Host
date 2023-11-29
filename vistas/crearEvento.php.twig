@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Host</title>
+  <link rel="stylesheet" href="{{urlLinks}}css/crearEvento.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+
+</head>
+  <body>
+    <div id="navegacion">
+      <nav>
+        <ul>
+          <li><a href="http://localhost/eventHost/HomePageEmpresa"><div id="miniLogo"><img src="{{urlLinks}}imagenes/logo.png"></div></a></li>
+          <li><input type="text" id="buscar" placeholder="Buscar"></li>
+          <li><a href="http://localhost/eventHost/HomePageEmpresa"><i class="fas fa-home" style="color: #270b64;"></i></a></li>
+          <li><a href="#servicios"><i class="fas fa-id-card" style="color: #270b64;"></i></a></li>
+          <li><a href="#contacto"><i class="fas fa-bell" style="color: #270b64;"></i></a></li>
+          <li><a href="http://localhost/eventHost/CrearEvento"><i class="fas fa-landmark" style="color: #270b64;"></i></i></a></li>
+          <li style="margin-left: auto"><a href="#contacto"><div id="miniImagenPerfil"><img src="{{urlLinks}}imagenes/logoAnkara.jpg"></div></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="cuerpo">
+      <div id="crearEvento">
+        <div id="titulo"><h2><strong>Crear Evento</strong></h2></div>
+        <div id="formulario">
+          <form action="http://localhost/eventHost/CrearEvento/Creado" method="post">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" name="nombre" required class="texto"><br>
+
+            <label for="organizacion">Organización:</label><br>
+            <input type="text" name="organizacion" required class="texto"><br>
+
+            <label for="fecha">Fecha:</label><br>
+            <input type="text" name="fecha" required class="texto"><br>
+
+            <label for="direccion">Dirección:</label><br>
+            <input type="text" name="direccion" required class="texto"><br>
+
+            <label for="descripcion">Descripción:</label><br>
+            <textarea name="descripcion" rows="4" required class="texto"></textarea><br>
+
+            <label for="localizacion">Localización:</label><br>
+            <input type="text" name="localizacion" required class="texto"><br>
+
+            <label for="idiomas">Idiomas:</label><br>
+            <input type="text" name="idiomas" required class="texto"><br>
+
+            <label for="vestimenta">Vestimenta:</label><br>
+            <input type="text" name="vestimenta" required class="texto"><br>
+
+            <label for="numAzafatas">Número de azafatas:</label><br>
+            <input type="number" name="numAzafatas" required class="texto"><br>
+
+            <button>Enviar</button>
+          </form>
+        </div>
+      </div>
+      <div id="misEventos">
+        {% for evento in eventos %}
+          <div class="eventos">
+            <div id="cuerpoEvento">
+              <p class="nombreEvento">{{ evento.getNombre() }}</p><br/>
+              <p class="textoEvento">{{ evento.getDescripcion() }}</p></br>
+              <p class="textoEvento"><strong>-Fecha:</strong> {{ evento.getFecha() }}</p>
+              <p class="textoEvento"><strong>-Localización:</strong>{{ evento.getLocalizacion() }}</p>
+              <p class="textoEvento"><strong>-Número de azafatas  contratar:</strong> {{ evento.getNumeroAzafatas() }}</p>
+              <a href="/eventHost/Evento/{{evento.getIdEvento()}}"><button>Gestionar Solicitudes</button></a>
+            </div>
+          </div>
+        {% endfor %}
+</div>
+
+    </div>
+  </body>
+</html>
+
