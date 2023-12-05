@@ -1,6 +1,7 @@
 <?php
 
-require_once "../librerias/Conexion.php";
+require_once "librerias/Conexion.php";
+require_once "modelos/Empresa.php";
 class Evento
 {
 
@@ -218,6 +219,22 @@ class Evento
       return "Empresa no encontrada";
     }
   }
+  public function getFotoEmpresaEvento($idEvento, $idEmpresa)
+  {
+    $conexion = Conexion::getConnection();
+    $sql = "SELECT em.* FROM empresa em INNER JOIN evento e ON (em.IdEmpresa=e.IdEmpresa) WHERE e.idEvento = :idEv AND e.IdEmpresa = :idEm;";
+    $parametros = array(':idEv' => $idEvento, ':idEm' => $idEmpresa);
+    $resultado = $conexion->query($sql, $parametros);
+    $empresa = $resultado->fetchObject("Empresa");
+
+    if ($empresa) {
+      $foto = $empresa->getFoto();
+      return $foto;
+    } else {
+      return null; // O manejar de otra manera si no se encuentra la empresa
+    }
+  }
+
 
   public static function getAllEventos($idAz)
   {

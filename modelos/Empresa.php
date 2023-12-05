@@ -8,7 +8,7 @@ class Empresa
   public string $eventosPasados;
   public string $telefono;
   public string $email;
-  public string $fotos;
+  public string $foto = '';
   public string $redesSociales;
   public string $contrasena;
   public string $zonasTrabajo;
@@ -121,18 +121,18 @@ class Empresa
   /**
    * @return string
    */
-  public function getFotos(): string
+  public function getFoto(): string
   {
-    return $this->fotos;
+    return $this->foto;
   }
 
   /**
    * @param string $fot
    * @return 
    */
-  public function setFotos(string $fot)
+  public function setFoto(string $fot)
   {
-    $this->fotos = $fot;
+    $this->foto = $fot;
   }
 
   /**

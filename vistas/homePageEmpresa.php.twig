@@ -13,19 +13,19 @@
     <div id="navegacion">
       <nav>
         <ul>
-          <li><a href="http://localhost/eventHost/HomePage"><div id="miniLogo"><img src="{{urlLinks}}imagenes/logo.png"></div></a></li>
+          <li><a href="/eventHost/HomePageEmpresa"><div id="miniLogo"><img src="{{urlLinks}}imagenes/logo.png"></div></a></li>
           <li><input type="text" id="buscar" placeholder="Buscar"></li>
-          <li><a href="http://localhost/eventHost/HomePage"><i class="fas fa-home" style="color: #270b64;"></i></a></li>
+          <li><a href="/eventHost/HomePageEmpresa"><i class="fas fa-home" style="color: #270b64;"></i></a></li>
           <li><a href="#servicios"><i class="fas fa-id-card" style="color: #270b64;"></i></a></li>
           <li><a href="#contacto"><i class="fas fa-bell" style="color: #270b64;"></i></a></li>
-          <li><a href="http://localhost/eventHost/CrearEvento"><i class="fas fa-landmark" style="color: #270b64;"></i></i></a></li>
-          <li style="margin-left: auto"><a href="#contacto"><div id="miniImagenPerfil"><img src="{{urlLinks}}imagenes/logoAnkara.jpg"></div></a></li>
+          <li><a href="/eventHost/CrearEvento"><i class="fas fa-landmark" style="color: #270b64;"></i></i></a></li>
+          <li style="margin-left: auto"><a href="#contacto"><div id="miniImagenPerfil"><img src="{{urlLinks}}{{foto}}"></div></a></li>
         </ul>
       </nav>
     </div>
     <div id="cuerpo">
       <div id="miniPerfil">
-        <div id="fotoPerfil"><img src="{{urlLinks}}imagenes/logoAnkara.jpg"></div>
+        <div id="fotoPerfil"><img src="{{urlLinks}}{{foto}}"></div>
         <div id="nombre"><strong>{{ nombre }}</strong> <br> Empresa de azafatas de Eventos</div>
         <div id="experiencia1" class="experiencia">{{experiencia1}}</div>
         <div id="experiencia2" class="experiencia">{{experiencia2}}</div>
@@ -35,7 +35,7 @@
       <div id="ofertasTrabajo">
         {% for azafata in azafatas %}
           <div id="oferta{{ loop.index }}" class="oferta">
-              <div id="imagenEmpresa-oferta"><img src="{{urlLinks}}imagenes/logoAnkara.jpg"></div>
+              <div id="imagenEmpresa-oferta"><img src="{{urlLinks}}{{azafata.getFotos()}}"></div>
               <div id="div-CuerpoOferta"> 
                 <p id="oferta{{ loop.index }}-nombreEmpresa" class="textoNegrita">{{ azafata.getNombre() }} {{azafata.getApellidos()}}</p><br/>
                 <p id="oferta{{ loop.index }}-descripcion" class="cuerpoOferta">{{ azafata.getDescripcion()}}</p></br>

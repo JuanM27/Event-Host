@@ -5,15 +5,15 @@ class Azafata
   public string $nombre;
   public string $apellidos;
   public string $email;
-  public string $telefono;
-  public string $fotos;
-  public string $experiencia;
-  public string $estudios;
-  public string $idiomas;
+  public ?string $telefono;
+  public ?string $fotos;
+  public ?string $experiencia;
+  public ?string $estudios;
+  public ?string $idiomas;
   public string $contrasena;
-  public string $zonaTrabajo;
-  public string $descripcion;
-  public string $disponibilidad;
+  public ?string $zonaTrabajo;
+  public ?string $descripcion;
+  public ?string $disponibilidad;
 
   /**
    *
@@ -102,7 +102,7 @@ class Azafata
   /**
    * @return string
    */
-  public function getTelefono(): string
+  public function getTelefono(): ?string
   {
     return $this->telefono;
   }
@@ -178,7 +178,7 @@ class Azafata
   /**
    * @return string
    */
-  public function getIdiomas(): string
+  public function getIdiomas(): ?string
   {
     return $this->idiomas;
   }
@@ -195,7 +195,7 @@ class Azafata
   /**
    * @return string
    */
-  public function getZonaTrabajo(): string
+  public function getZonaTrabajo(): ?string
   {
     return $this->zonaTrabajo;
   }
@@ -212,7 +212,7 @@ class Azafata
   /**
    * @return string
    */
-  public function getDescripcion(): string
+  public function getDescripcion(): ?string
   {
     return $this->descripcion;
   }
@@ -229,7 +229,7 @@ class Azafata
   /**
    * @return string
    */
-  public function getDisponibilidad(): string
+  public function getDisponibilidad(): ?string
   {
     return $this->disponibilidad;
   }
@@ -254,7 +254,7 @@ class Azafata
   public static function getAllAzafatas()
   {
     $conexion = Conexion::getConnection();
-    $sql = "SELECT * FROM azafata";
+    $sql = "SELECT * FROM azafata LIMIT 3;";
     $resultado = $conexion->query($sql);
 
     if ($resultado->rowCount() > 0) {

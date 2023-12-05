@@ -1,8 +1,8 @@
 <?php
 
-require_once "../controladores/Controller.php";
-require_once "../modelos/Azafata.php";
-require_once "../modelos/Evento.php";
+require_once "controladores/Controller.php";
+require_once "modelos/Azafata.php";
+require_once "modelos/Evento.php";
 
 class AzafataController extends Controller
 {
@@ -16,7 +16,8 @@ class AzafataController extends Controller
       "experiencia2" => $_SESSION["azafata"]->getExperiencia(1),
       "experiencia3" => $_SESSION["azafata"]->getExperiencia(2),
       "eventos" => $eventos,
-      "urlLinks" => $urlLinks
+      "urlLinks" => $urlLinks,
+      "imagenPerfil" => $_SESSION["azafata"]->getFotos()
 
     ]);
   }
@@ -24,7 +25,7 @@ class AzafataController extends Controller
   public function solicitarTrabajo()
   {
     $_SESSION["azafata"]->solicitarTrabajo($_GET['idEvento']);
-    header("Location: http://localhost/eventHost/HomePage");
+    header("Location: /eventHost/HomePage");
   }
 
 }

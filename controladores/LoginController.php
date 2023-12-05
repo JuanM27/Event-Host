@@ -1,7 +1,7 @@
 <?php
 
-require_once "../controladores/Controller.php";
-require_once "../modelos/Login.php";
+require_once "controladores/Controller.php";
+require_once "modelos/Login.php";
 
 class LoginController extends Controller
 {

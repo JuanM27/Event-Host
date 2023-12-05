@@ -13,18 +13,18 @@
     <div id="navegacion">
       <nav>
         <ul>
-          <li><a href="http://localhost/eventHost/HomePage"><div id="miniLogo"><img src="{{urlLinks}}imagenes/logo.png"></div></a></li>
+          <li><a href="/eventHost/HomePage"><div id="miniLogo"><img src="{{urlLinks}}imagenes/logo.png"></div></a></li>
           <li><input type="text" id="buscar" placeholder="Buscar"></li>
-          <li><a href="http://localhost/eventHost/HomePage"><i class="fas fa-home" style="color: #270b64;"></i></a></li>
+          <li><a href="/eventHost/HomePage"><i class="fas fa-home" style="color: #270b64;"></i></a></li>
           <li><a href="#servicios"><i class="fas fa-suitcase" style="color: #270b64;"></i></a></li>
           <li><a href="#contacto"><i class="fas fa-bell" style="color: #270b64;"></i></a></li>
-          <li style="margin-left: auto"><a href="#contacto"><div id="miniImagenPerfil"><img src="{{urlLinks}}imagenes/azafata1.1.jpg"></div></a></li>
+          <li style="margin-left: auto"><a href="#contacto"><div id="miniImagenPerfil"><img src="{{urlLinks}}{{imagenPerfil}}"></div></a></li>
         </ul>
       </nav>
     </div>
     <div id="cuerpo">
       <div id="miniPerfil">
-        <div id="fotoPerfil"><img src="{{urlLinks}}imagenes/azafata1.1.jpg"></div>
+        <div id="fotoPerfil"><img src="{{urlLinks}}{{imagenPerfil}}"></div>
         <div id="nombre"><strong>{{ nombre }}</strong> <br> Azafata de Eventos</div>
         <div id="experiencia1" class="experiencia">{{experiencia1}}</div>
         <div id="experiencia2" class="experiencia">{{experiencia2}}</div>
@@ -35,7 +35,7 @@
         {% for evento in eventos %}
           <form action="/eventHost/HomePage/Solicitar/{{evento.getIdEvento}}">
             <div id="oferta{{ loop.index }}" class="oferta">
-                <div id="imagenEmpresa-oferta"><img src="{{urlLinks}}imagenes/logoAnkara.jpg"></div>
+                <div id="imagenEmpresa-oferta"><img src="{{urlLinks}}{{evento.getFotoEmpresaEvento(evento.getIdEvento(),evento.getIdEmpresa())}}"></div>
                 <div id="div-CuerpoOferta"> 
                   <p id="oferta{{ loop.index }}-nombreEmpresa" class="textoNegrita">{{ evento.getNombreEmpresa(evento.IdEmpresa) }} | {{ evento.getNombre()}}</p><br/>
                   <p id="oferta{{ loop.index }}-descripcion" class="cuerpoOferta">{{ evento.getDescripcion()}}</p></br>

@@ -1,8 +1,8 @@
 <?php
 
-require_once "../controladores/Controller.php";
-require_once "../modelos/Empresa.php";
-require_once "../modelos/Evento.php";
+require_once "controladores/Controller.php";
+require_once "modelos/Empresa.php";
+require_once "modelos/Evento.php";
 
 class EventoController extends Controller
 {
@@ -41,12 +41,12 @@ class EventoController extends Controller
   public function contratarAzafata()
   {
     Evento::contratarAzafata($_GET["idAzafata"], $_GET["idEvento"]);
-    header("Location: http://localhost/eventHost/Evento/{$_GET["idEvento"]}");
+    header("Location: /eventHost/Evento/{$_GET["idEvento"]}");
   }
 
   public function finalizarEvento()
   {
     Evento::finalizarEvento($_GET["idEvento"]);
-    header("Location: http://localhost/eventHost/CrearEvento");
+    header("Location: /eventHost/CrearEvento");
   }
 }

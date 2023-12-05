@@ -1,21 +1,21 @@
 RewriteEngine On
 
-#RewriteRule ^url_amigable$ url_real [opcionalmente_flags]
+RewriteRule ^Login$ index.php?f=comprobarLogin&m=Login [L]
 
-RewriteRule ^index.php$ controladores/controladorFrontal.php?f=mostrarLogin&m=Login [L]
+RewriteRule ^Register$ index.php?f=mostrarRegister&m=Login [L]
 
-RewriteRule ^Register$ controladores/controladorFrontal.php?f=mostrarRegister&m=Login [L]
+RewriteRule ^HomePage$ index.php?f=mostrarNombre&m=Azafata [L]
 
-RewriteRule ^HomePage$ controladores/controladorFrontal.php?f=mostrarNombre&m=Azafata [L]
+RewriteRule ^HomePageEmpresa$ index.php?f=mostrarNombre&m=Empresa [L]
 
-RewriteRule ^HomePageEmpresa$ controladores/controladorFrontal.php?f=mostrarNombre&m=Empresa [L]
+RewriteRule ^HomePage/Solicitar/([1-9][0-9]*)$ index.php?f=solicitarTrabajo&m=Azafata&idEvento=$1 [L]
 
-RewriteRule ^HomePage/Solicitar/([1-9][0-9]*)$ controladores/controladorFrontal.php?f=solicitarTrabajo&m=Azafata&idEvento=$1 [L]
+RewriteRule ^CrearEvento$ index.php?f=CrearEvento&m=Evento [L]
 
-RewriteRule ^CrearEvento$ controladores/controladorFrontal.php?f=CrearEvento&m=Evento [L]
+RewriteRule ^CrearEvento/Creado$ index.php?f=insertarEvento&m=Evento [L]
 
-RewriteRule ^Evento/([1-9][0-9]*)$ controladores/controladorFrontal.php?f=gestionarEvento&m=Evento&idEvento=$1 [L]
+RewriteRule ^Evento/([1-9][0-9]*)$ index.php?f=gestionarEvento&m=Evento&idEvento=$1 [L]
 
-RewriteRule ^Evento/Contratar/([1-9][0-9]*)/([1-9][0-9]*)$ controladores/controladorFrontal.php?f=contratarAzafata&m=Evento&idAzafata=$1&idEvento=$2 [L]
+RewriteRule ^Evento/Contratar/([1-9][0-9]*)/([1-9][0-9]*)$ index.php?f=contratarAzafata&m=Evento&idAzafata=$1&idEvento=$2 [L]
 
-RewriteRule ^Evento/Finalizar/([1-9][0-9]*)$ controladores/controladorFrontal.php?f=finalizarEvento&m=Evento&idEvento=$1 [L]
+RewriteRule ^Evento/Finalizar/([1-9][0-9]*)$ index.php?f=finalizarEvento&m=Evento&idEvento=$1 [L]

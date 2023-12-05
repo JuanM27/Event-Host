@@ -1,8 +1,8 @@
 <?php
 
-require_once "../controladores/Controller.php";
-require_once "../modelos/Empresa.php";
-require_once "../modelos/Evento.php";
+require_once "controladores/Controller.php";
+require_once "modelos/Empresa.php";
+require_once "modelos/Evento.php";
 
 class EmpresaController extends Controller
 {
@@ -16,6 +16,7 @@ class EmpresaController extends Controller
       "experiencia2" => $_SESSION["empresa"]->getEventosPasados(1),
       "experiencia3" => $_SESSION["empresa"]->getEventosPasados(2),
       "azafatas" => $azafatas,
+      "foto" => $_SESSION["empresa"]->getFoto(),
       "urlLinks" => $urlLinks
     ]);
   }

@@ -37,7 +37,7 @@
       <div id="solicitudes">
         {% for azafata in azafatas %}
           <div class="solicitud">
-          <div id="imagenAzafata"><img src="{{urlLinks}}imagenes/logoAnkara.jpg"></div>
+          <div id="imagenAzafata"><img src="{{urlLinks}}{{azafata.getFotos()}}"></div>
             <div id="cuerpoSolicitud">
               <p class="nombreAzafata">{{ azafata.getNombre() }} {{azafata.getApellidos()}}</p><br/>
               <p class="textoSolicitud">{{ azafata.getDescripcion()}}</p></br>

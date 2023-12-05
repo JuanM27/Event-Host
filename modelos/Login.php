@@ -1,9 +1,9 @@
 <?php
 
-require_once "../librerias/Conexion.php";
-require_once "../modelos/Azafata.php";
-require_once "../modelos/Empresa.php";
-require_once "../modelos/Evento.php";
+require_once "librerias/Conexion.php";
+require_once "modelos/Azafata.php";
+require_once "modelos/Empresa.php";
+require_once "modelos/Evento.php";
 
 class Login
 {

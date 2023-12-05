@@ -1,7 +1,7 @@
 <?php
-require_once "../modelos/Azafata.php";
-require_once "../modelos/Empresa.php";
-require_once "../modelos/Evento.php";
+require_once "modelos/Azafata.php";
+require_once "modelos/Empresa.php";
+require_once "modelos/Evento.php";
 
 session_start();
 
@@ -14,15 +14,15 @@ session_start();
 // series --> index
 // series/info.php?id=2   --> series/info/2
 
-$que = $_GET["f"] ?? $_POST["f"];   // Función a realizar con el controlador|modelo
-$quien = $_GET["m"] ?? $_POST["m"];   // Serie, Usuario, Genero, Pelicula, etc...
+$que = $_GET["f"] ?? $_POST["f"] ?? "mostrarLogin";   // Función a realizar con el controlador|modelo
+$quien = $_GET["m"] ?? $_POST["m"] ?? "Login";   // Serie, Usuario, Genero, Pelicula, etc...
 
 // "Construimos" el nombre del controlador con el que vamos
 // a trabajar.
 $nombreControlador = "{$quien}Controller";
 
 // Ruta hasta el controlador
-$ruta = "../controladores/{$nombreControlador}.php";
+$ruta = "controladores/{$nombreControlador}.php";
 
 // Comprobamos si existe el archivo controlador
 if (!file_exists($ruta))
