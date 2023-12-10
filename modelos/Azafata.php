@@ -120,7 +120,7 @@ class Azafata
   /**
    * @return string
    */
-  public function getFotos(): string
+  public function getFotos(): ?string
   {
     return $this->fotos;
   }
@@ -141,6 +141,8 @@ class Azafata
   {
     if ($numero === null) {
       return $this->experiencia;
+    } else if ($this->experiencia === null) {
+      return 'Experiencia no definida';
     } else {
       $experiencia = explode(",", $this->experiencia);
       return isset($experiencia[$numero]) ? $experiencia[$numero] : 'Índice no válido';

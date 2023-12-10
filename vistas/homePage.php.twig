@@ -18,13 +18,28 @@
           <li><a href="/eventHost/HomePage"><i class="fas fa-home" style="color: #270b64;"></i></a></li>
           <li><a href="#servicios"><i class="fas fa-suitcase" style="color: #270b64;"></i></a></li>
           <li><a href="#contacto"><i class="fas fa-bell" style="color: #270b64;"></i></a></li>
-          <li style="margin-left: auto"><a href="#contacto"><div id="miniImagenPerfil"><img src="{{urlLinks}}{{imagenPerfil}}"></div></a></li>
+          <li style="margin-left: auto">
+            <a href="#contacto">
+              <div id="miniImagenPerfil">
+                {% if imagenPerfil is not null %}
+                  <img src="{{ urlLinks ~ imagenPerfil }}">
+                {% else %}
+                  <img src="{{ urlLinks ~ 'placeholder.jpg' }}">
+                {% endif %}
+              </div>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
     <div id="cuerpo">
       <div id="miniPerfil">
-        <div id="fotoPerfil"><img src="{{urlLinks}}{{imagenPerfil}}"></div>
+        <div id="fotoPerfil">{% if imagenPerfil is not null %}
+            <img src="{{ urlLinks }}{{ imagenPerfil }}">
+          {% else %}
+            <img src="{{ urlLinks ~ 'placeholder.jpg' }}">
+          {% endif %}
+        </div>
         <div id="nombre"><strong>{{ nombre }}</strong> <br> Azafata de Eventos</div>
         <div id="experiencia1" class="experiencia">{{experiencia1}}</div>
         <div id="experiencia2" class="experiencia">{{experiencia2}}</div>

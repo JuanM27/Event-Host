@@ -4,6 +4,8 @@ RewriteRule ^Login$ index.php?f=comprobarLogin&m=Login [L]
 
 RewriteRule ^Register$ index.php?f=mostrarRegister&m=Login [L]
 
+RewriteRule ^Registrar$ index.php?f=registrar&m=Login [L]
+
 RewriteRule ^HomePage$ index.php?f=mostrarNombre&m=Azafata [L]
 
 RewriteRule ^HomePageEmpresa$ index.php?f=mostrarNombre&m=Empresa [L]
